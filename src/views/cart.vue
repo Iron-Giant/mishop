@@ -1,7 +1,7 @@
 <template>
   <div>
     <order-header />
-    cart
+    <div class="container"></div>
     <nav-footer />
   </div>
 </template>

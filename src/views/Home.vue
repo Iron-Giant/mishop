@@ -1,6 +1,5 @@
 <template>
   <div>
-    home
     <nav-header />
     <router-view />
     <nav-footer />
@@ -10,10 +9,12 @@
 <script>
 import NavHeader from "@/components/NavHeader";
 import NavFooter from "@/components/NavFooter";
+
 export default {
   data() {
     return {};
   },
+  created() {},
   components: {
     NavHeader,
     NavFooter,
