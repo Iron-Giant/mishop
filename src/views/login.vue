@@ -69,15 +69,7 @@ export default {
         });
     },
     register() {
-      this.axios
-        .post("/user/register", {
-          username: "admin1",
-          password: "admin1",
-          email: "admin1@163.com",
-        })
-        .then(() => {
-          this.$message.success("注册成功");
-        });
+      this.$router.push("/register");
     },
   },
 };

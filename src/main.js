@@ -6,10 +6,22 @@ import axios from "axios";
 import VueAxios from "vue-axios";
 import VueLazyLoad from "vue-lazyload";
 import VueCookie from "vue-cookie";
-import { Message, Icon } from "element-ui";
+import { Message, Icon, Form, FormItem, Input } from "element-ui";
+
+Vue.use(VueAxios, axios);
+
+Vue.use(VueLazyLoad, {
+  loading: "/imgs/loading-svg/loading-bars.svg",
+});
+
+Vue.use(VueCookie);
 
 Vue.use(Icon);
-Vue.use(VueAxios, axios);
+Vue.use(Form);
+Vue.use(FormItem);
+Vue.use(Input);
+
+Vue.prototype.$message = Message;
 
 axios.defaults.baseURL = "/api";
 axios.defaults.timeout = 8000;
@@ -34,13 +46,6 @@ axios.interceptors.response.use(
     return Promise.reject(error);
   }
 );
-Vue.prototype.$message = Message;
-// 图片懒加载
-Vue.use(VueLazyLoad, {
-  loading: "/imgs/loading-svg/loading-bars.svg",
-});
-
-Vue.use(VueCookie);
 
 Vue.config.productionTip = false;
 
