@@ -143,6 +143,8 @@ export default {
   },
   created() {
     this.getProductList();
+    // 退出后重新登陆不会执行app.vue里的钩子函数，购物车数量显示为 0，所以重新获取下
+    // 根据params可知，当路由是从login过来的，重新获取购物车
     let params = this.$route.params;
     if (params && params.from == "login") {
       this.getCartCount();

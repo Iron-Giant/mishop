@@ -40,6 +40,7 @@ axios.interceptors.response.use(
       return Promise.reject(res);
     }
   },
+  // 第二个回调函数用来处理状态码500的服务端错误响应
   error => {
     let res = error.response;
     Message.error(res.data.message);

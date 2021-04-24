@@ -1,19 +1,19 @@
 <template>
   <div>
-    <order-header />
     <router-view />
+    <service-bar />
     <nav-footer />
   </div>
 </template>
 
 <script>
-import OrderHeader from "@/components/OrderHeader";
 import NavFooter from "@/components/NavFooter";
+import ServiceBar from "@/components/ServiceBar";
 export default {
   components: {
-    OrderHeader,
+    ServiceBar,
     NavFooter,
   },
 };
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss"></style>

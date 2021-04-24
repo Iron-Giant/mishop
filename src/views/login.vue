@@ -47,6 +47,13 @@ export default {
       userId: "",
     };
   },
+  // 局部导航守卫，登录后不允许再跳转login页面
+  beforeRouteEnter(to, from, next) {
+    next(vm => {
+      if (vm.$cookie.get("userId")) next(from.path);
+      else next();
+    });
+  },
   methods: {
     ...mapActions(["saveUserName"]),
     login() {
@@ -60,6 +67,14 @@ export default {
           this.$cookie.set("userId", res.id, { expires: "Session" });
           // this.$store.dispatch('saveUserName',res.username);
           this.saveUserName(res.username);
+          // query 传参
+          // this.$router.push({
+          //   path: "/index",
+          //   query: {
+          //     from: "login",
+          //   },
+          // });
+          // params 传参
           this.$router.push({
             name: "index",
             params: {

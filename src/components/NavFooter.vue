@@ -16,8 +16,9 @@
 <script>
 export default {};
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .footer {
+  z-index: 1;
   height: 234px;
   border-top: 4px solid #ff6600;
   background-color: #333333;
